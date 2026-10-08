@@ -3,7 +3,6 @@
 > Real-time safety monitoring system for Enugu coal mines using AWS Cloud. Detects dangerous gas accumulation and triggers instant email alerts.
 
 ![Architecture](architecture.png)
-*Figure 1: System Architecture - Sensor → AWS IoT Core → S3 (Data Lake) + SNS (Alert)*
 
 Problem Statement
 Enugu coal mines face gas accumulation hazards (methane, CO). Manual monitoring is slow, risky, and has no historical data archive for geological analysis. This project provides automated, cloud-based safety monitoring.
