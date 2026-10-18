@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Benedict - Cloud Geologist Portfolio</title>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<style>
+body{font-family:Arial;margin:0;padding:20px;background:#f4f4f4}
+.header{background:#0a3d62;color:white;padding:20px;text-align:center}
+.card{background:white;padding:15px;margin:15px 0;border-radius:8px}
+#map{height:400px;width:100%;border-radius:8px}
+</style>
+</head>
+<body>
+<div class="header">
+<h1>BENEDICT - CLOUD GEOLOGIST</h1>
+<p>Warri, Delta State | Niger Delta Basin Expert | AWS + Python</p>
+<p><a href="https://github.com/Benedict-geology-cloud/geology-cloud-portfolio" style="color:yellow">GitHub Portfolio</a></p>
+</div>
+
+<div class="card">
+<h2>Day 14: Interactive Niger Delta Geology Map</h2>
+<div id="map"></div>
+</div>
+
+<div class="card">
+<h3>Geology Analysis Result</h3>
+<p>Location: Asaba/Warri - Sedimentary Basin</p>
+<ul>
+<li><b>Benin Formation:</b> Coastal Plain Sands - Top layer (Sand, Gravel)</li>
+<li><b>Agbada Formation:</b> Oil & Gas Reservoir - Middle layer</li>
+<li><b>Akata Formation:</b> Marine Shale - Source rock bottom</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>Skills: AWS S3 | Python | GitHub | Geology Mapping</h3>
+<p>Built from Warri, Delta State using Termux on Android</p>
+</div>
+
+<script>
+var map = L.map('map').setView([5.5, 5.9], 8);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+L.marker([6.2059, 6.6958]).addTo(map).bindPopup("<b>Asaba</b><br>Benin Formation - Sand/Gravel").openPopup();
+L.marker([5.5167, 5.75]).addTo(map).bindPopup("<b>Warri</b><br>Agbada Formation - Oil & Gas");
+L.marker([5.5, 6.0]).addTo(map).bindPopup("<b>Niger Delta Basin</b><br>Sedimentary - 3 Formations");
+</script>
+</body>
+</html>
