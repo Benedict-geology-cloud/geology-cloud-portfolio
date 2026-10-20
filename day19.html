@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Day 19 - Live Data Map</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<style>
+  body { margin:0; font-family: Arial; background: #f4f6f7; }
+  h1 { background: #0a3d62; color: white; padding: 15px; text-align: center; margin:0; }
+  #map { height: 450px; width: 100%; }
+  .info { background: white; padding: 15px; margin: 10px; border-radius: 8px; }
+  table { width:100%; border-collapse: collapse; }
+  th { background: #0a3d62; color: white; padding: 8px; }
+  td { padding: 8px; border-bottom: 1px solid #ddd; }
+</style>
+</head>
+<body>
+
+<h1>Day 19: Live Geology Data from JSON</h1>
+
+<div class="info">
+<b>Status:</b> <span id="status">Loading formations.json...</span><br>
+<a href="day18.html">Day 18</a> | <a href="formations.json" target="_blank">View Raw JSON</a> | <a href="index.html">Home</a>
+</div>
+
+<div id="map"></div>
+
+<div class="info">
+<h3>Formation Thickness Table (Loaded from JSON)</h3>
+<table id="dataTable">
+<tr><th>Town</th><th>Formation</th><th>Thickness</th><th>Rock</th></tr>
+</table>
+</div>
+
+<script>
+var map = L.map('map').setView([5.5, 5.8], 8);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {attribution: '© OSM'}).addTo(map);
+
+// FETCH - The Cloud Power!
+fetch('formations.json')
+  .then(response => response.json())
+  .then(data => {
+    document.getElementById("status").innerHTML = "✅ Loaded " + data.length + " formations! (Real cloud data)";
+    
+    // Add to map AND table
+    var table = document.getElementById("dataTable");
+    data.forEach(function(item) {
+      // 1. Marker
+      var color = item.formation == "Benin" ? "green" : item.formation == "Agbada" ? "orange" : "blue";
+      L.marker([item.lat, item.lon]).addTo(map)
+        .bindPopup("<b>" + item.town + "</b><br>Formation: " + item.formation + "<br>Thickness: " + item.thickness_m + "m<br>Rock: " + item.rock);
+      
+      // 2. Table row
+      var row = table.insertRow();
+      row.innerHTML = "<td>" + item.town + "</td><td>" + item.formation + "</td><td>" + item.thickness_m + "m</td><td>" + item.rock + "</td>";
+    });
+  })
+  .catch(error => {
+    document.getElementById("status").innerHTML = "❌ Error loading JSON: " + error + " - Make sure formations.json is on S3!";
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,9 @@
+[
+  {"id": 1, "town": "Warri", "lat": 5.5167, "lon": 5.75, "formation": "Benin", "thickness_m": 1800, "rock": "Sand/Gravel"},
+  {"id": 2, "town": "Sapele", "lat": 5.8941, "lon": 5.6765, "formation": "Benin", "thickness_m": 2100, "rock": "Sand"},
+  {"id": 3, "town": "Ughelli", "lat": 5.4896, "lon": 6.0076, "formation": "Agbada", "thickness_m": 1200, "rock": "Sand/Shale - Oil"},
+  {"id": 4, "town": "Asaba", "lat": 6.1988, "lon": 6.7319, "formation": "Benin", "thickness_m": 1900, "rock": "Sand"},
+  {"id": 5, "town": "Port Harcourt", "lat": 4.8156, "lon": 7.0498, "formation": "Agbada", "thickness_m": 1500, "rock": "Shale/Sand - Gas"},
+  {"id": 6, "town": "Yenagoa", "lat": 4.9218, "lon": 6.2644, "formation": "Akata", "thickness_m": 6000, "rock": "Marine Shale - Source"},
+  {"id": 7, "town": "Abraka", "lat": 5.79, "lon": 6.10, "formation": "Benin", "thickness_m": 2000, "rock": "Sand - Your Town?"}
+]
