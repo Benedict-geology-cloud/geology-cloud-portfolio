@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Day 20 - Basin Calculator</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<style>
+  body { margin:0; font-family: Arial; background: #f4f6f7; }
+  h1 { background: #0a3d62; color: white; padding: 15px; text-align: center; margin:0; }
+  #map { height: 350px; width: 100%; }
+  .card { background: white; padding: 15px; margin: 10px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+  button { background: #27ae60; color: white; padding: 12px; border: none; border-radius: 5px; margin: 5px; cursor: pointer; font-weight: bold; }
+  button:hover { background: #0a3d62; }
+  #stats { background: #0a3d62; color: white; padding: 15px; border-radius: 8px; font-size: 18px; line-height: 1.8; }
+  table { width:100%; border-collapse: collapse; margin-top:10px; }
+  th { background: #0a3d62; color: white; padding: 8px; }
+  td { padding: 8px; border-bottom: 1px solid #ddd; }
+</style>
+</head>
+<body>
+
+<h1>Day 20: Niger Delta Basin Calculator</h1>
+
+<div class="card">
+<button onclick="loadAndCalc()">🔄 Load Data & Calculate Basin</button>
+<button onclick="calcAgbadaOnly()">🛢️ Agbada Only (Oil Zone)</button>
+<div id="stats">Click button to calculate total thickness...</div>
+</div>
+
+<div id="map"></div>
+
+<div class="card">
+<table id="dataTable">
+<tr><th>Town</th><th>Formation</th><th>Thickness</th><th>Status</th></tr>
+</table>
+</div>
+
+<script>
+var map = L.map('map').setView([5.5, 5.8], 8);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {attribution: '© OSM'}).addTo(map);
+var allData = [];
+
+function loadAndCalc() {
+  fetch('formations.json')
+    .then(r => r.json())
+    .then(data => {
+      allData = data;
+      var total = 0;
+      var table = document.getElementById("dataTable");
+      table.innerHTML = "<tr><th>Town</th><th>Formation</th><th>Thickness</th><th>Status</th></tr>";
+      
+      data.forEach(item => {
+        total += item.thickness_m;
+        L.marker([item.lat, item.lon]).addTo(map)
+          .bindPopup(item.town + ": " + item.thickness_m + "m");
+        var row = table.insertRow();
+        row.innerHTML = "<td>" + item.town + "</td><td>" + item.formation + "</td><td>" + item.thickness_m + "m</td><td>✅</td>";
+      });
+      
+      var avg = Math.round(total / data.length);
+      document.getElementById("stats").innerHTML = 
+        "📊 <b>BASIN ANALYSIS:</b><br>" +
+        "Total Sediment: <b>" + total + "m</b> across 7 towns<br>" +
+        "Average Thickness: <b>" + avg + "m</b><br>" +
+        "Deepest: Yenagoa Akata (6000m) - Source rock!<br>" +
+        "💰 Oil Window: ~1200-1500m (Agbada)";
+    });
+}
+
+function calcAgbadaOnly() {
+  if(allData.length == 0) { alert("First click Load Data!"); return; }
+  var agbada = allData.filter(d => d.formation == "Agbada");
+  var totalAgbada = 0;
+  agbada.forEach(d => totalAgbada += d.thickness_m);
+  document.getElementById("stats").innerHTML = 
+    "🛢️ <b>AGBADA (Oil Reservoir) ONLY:</b><br>" +
+    "Towns: " + agbada.map(d => d.town).join(", ") + "<br>" +
+    "Total Agbada Thickness: <b>" + totalAgbada + "m</b><br>" +
+    "Average: <b>" + Math.round(totalAgbada/agbada.length) + "m</b> - Main exploration target!";
+}
+</script>
+
+<div class="card"><a href="day19.html">Day 19</a> | <a href="index.html">Home</a></div>
+
+</body>
+</html>
