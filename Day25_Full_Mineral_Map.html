@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_c33038864093cd6e3347c4de74e327dd {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+<div style="position: fixed; bottom: 50px; left: 50px; z-index:1000; background:white; padding:10px; border-radius:8px;">
+<b>Day 25 - Mineral Zones</b><br>
+<span style="color:orange">★</span> Yellow-Lithium<br>
+<span style="color:red">●</span> Red-Gold<br>
+<span style="color:blue">●</span> Blue-Tin<br>
+</div>
+    
+            <div class="folium-map" id="map_c33038864093cd6e3347c4de74e327dd" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_c33038864093cd6e3347c4de74e327dd = L.map(
+                "map_c33038864093cd6e3347c4de74e327dd",
+                {
+                    center: [9.0, 8.0],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 6,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_58363ad5fd099ca8aedba444fb27e11c = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_58363ad5fd099ca8aedba444fb27e11c.addTo(map_c33038864093cd6e3347c4de74e327dd);
+        
+    
+            var tile_layer_8cb7c85351ec2a5f0e83d427283950ff = L.tileLayer(
+                "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+                {
+  "minZoom": 0,
+  "maxZoom": 18,
+  "maxNativeZoom": 18,
+  "noWrap": false,
+  "attribution": "Esri",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_8cb7c85351ec2a5f0e83d427283950ff.addTo(map_c33038864093cd6e3347c4de74e327dd);
+        
+    
+            var tile_layer_185b74089de432aa88cf813ad0283062 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_185b74089de432aa88cf813ad0283062.addTo(map_c33038864093cd6e3347c4de74e327dd);
+        
+    
+            var marker_3491aafd1aeb8ecbe2e587f09f1f5f15 = L.marker(
+                [8.55, 8.15],
+                {
+}
+            ).addTo(map_c33038864093cd6e3347c4de74e327dd);
+        
+    
+            var icon_a38ef51d209fd8f27f9c76dda16f96ab = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e46b80ccf1e95f78bfeb8b1fe3e15eeb = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2a1a9c8a804d9ae1fbf7682ea2dfaa40 = $(`<div id="html_2a1a9c8a804d9ae1fbf7682ea2dfaa40" style="width: 100.0%; height: 100.0%;"><b>NAS-Li-01</b><br>YELLOW LITHIUM<br>Kokona, Nasarawa - Pegmatite belt - SWIR high<br>8.55,8.15</div>`)[0];
+                popup_e46b80ccf1e95f78bfeb8b1fe3e15eeb.setContent(html_2a1a9c8a804d9ae1fbf7682ea2dfaa40);
+            
+        
+
+        marker_3491aafd1aeb8ecbe2e587f09f1f5f15.bindPopup(popup_e46b80ccf1e95f78bfeb8b1fe3e15eeb)
+        ;
+
+        
+    
+    
+                marker_3491aafd1aeb8ecbe2e587f09f1f5f15.setIcon(icon_a38ef51d209fd8f27f9c76dda16f96ab);
+            
+    
+            var circle_cb891aed9854fd0db8d7ba1d4ee57dab = L.circle(
+                [8.55, 8.15],
+                {"bubblingMouseEvents": true, "color": "yellow", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5000, "stroke": true, "weight": 3}
+            ).addTo(map_c33038864093cd6e3347c4de74e327dd);
+        
+    
+            var marker_4f622af48f0594fea45227dbc93c026a = L.marker(
+                [8.52, 8.2],
+                {
+}
+            ).addTo(map_c33038864093cd6e3347c4de74e327dd);
+        
+    
+            var icon_70feed101f9440be4c8f205372192af0 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9daf2a360d65eab02a872e97bfcc08cc = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_63e621cb97bb2a6bfed7da2fe4ae03e7 = $(`<div id="html_63e621cb97bb2a6bfed7da2fe4ae03e7" style="width: 100.0%; height: 100.0%;"><b>NAS-Li-02</b><br>YELLOW LITHIUM<br>Kokona - Near river, clay mineral high<br>8.52,8.2</div>`)[0];
+                popup_9daf2a360d65eab02a872e97bfcc08cc.setContent(html_63e621cb97bb2a6bfed7da2fe4ae03e7);
+            
+        
+
+        marker_4f622af48f0594fea45227dbc93c026a.bindPopup(popup_9daf2a360d65eab02a872e97bfcc08cc)
+        ;
+
+        
+    
+    
+                marker_4f622af48f0594fea45227dbc93c026a.setIcon(icon_70feed101f9440be4c8f205372192af0);
+            
+    
+            var circle_198b5d7f91a84ae54d7630e42ec5ec9e = L.circle(
+                [8.52, 8.2],
+                {"bubblingMouseEvents": true, "color": "yellow", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5000, "stroke": true, "weight": 3}
+            ).addTo(map_c33038864093cd6e3347c4de74e327dd);
+        
+    
+            var marker_4494bbd43c0670ab58d8774711d04942 = L.marker(
+                [8.78, 8.65],
+                {
+}
+            ).addTo(map_c33038864093cd6e3347c4de74e327dd);
+        
+    
+            var icon_7a504dd74010dbe4dab74a0e7d0b36de = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_2d8c0ea3992ed2032e16f624053b2076 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ad12c9758d151b04b9d889f61310341d = $(`<div id="html_ad12c9758d151b04b9d889f61310341d" style="width: 100.0%; height: 100.0%;"><b>NAS-Li-03</b><br>YELLOW LITHIUM<br>Wamba - Migmatite gneiss contact<br>8.78,8.65</div>`)[0];
+                popup_2d8c0ea3992ed2032e16f624053b2076.setContent(html_ad12c9758d151b04b9d889f61310341d);
+            
+        
+
+        marker_4494bbd43c0670ab58d8774711d04942.bindPopup(popup_2d8c0ea3992ed2032e16f624053b2076)
+        ;
+
+        
+    
+    
+                marker_4494bbd43c0670ab58d8774711d04942.setIcon(icon_7a504dd74010dbe4dab74a0e7d0b36de);
+            
+    
+            var circle_816c8165bfdf5fbbb2f8c148fbb374b1 = L.circle(
+                [8.78, 8.65],
+                {"bubblingMouseEvents": true, "color": "yellow", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5000, "stroke": true, "weight": 3}
+            ).addTo(map_c33038864093cd6e3347c4de74e327dd);
+        
+    
+            var marker_f01e836d3947101d8a9a14be8e09581b = L.marker(
+                [8.8, 8.9],
+                {
+}
+            ).addTo(map_c33038864093cd6e3347c4de74e327dd);
+        
+    
+            var icon_d9510c003debf83cfab19f22cc5c3741 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a08747e3d39d6b99de6937c7778ef7ba = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_94f7fe42ad8c6204ac5b14ab89b3b6ac = $(`<div id="html_94f7fe42ad8c6204ac5b14ab89b3b6ac" style="width: 100.0%; height: 100.0%;"><b>NAS-Li-04</b><br>YELLOW LITHIUM<br>Nasarawa Eggon - Artisanal pit observed<br>8.8,8.9</div>`)[0];
+                popup_a08747e3d39d6b99de6937c7778ef7ba.setContent(html_94f7fe42ad8c6204ac5b14ab89b3b6ac);
+            
+        
+
+        marker_f01e836d3947101d8a9a14be8e09581b.bindPopup(popup_a08747e3d39d6b99de6937c7778ef7ba)
+        ;
+
+        
+    
+    
+                marker_f01e836d3947101d8a9a14be8e09581b.setIcon(icon_d9510c003debf83cfab19f22cc5c3741);
+            
+    
+            var circle_09b484a499350ac42a54725f05e93a2b = L.circle(
+                [8.8, 8.9],
+                {"bubblingMouseEvents": true, "color": "yellow", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5000, "stroke": true, "weight": 3}
+            ).addTo(map_c33038864093cd6e3347c4de74e327dd);
+        
+    
+            var marker_30acb53c4542b84c7a6baa44a184b1d9 = L.marker(
+                [7.62, 4.73],
+                {
+}
+            ).addTo(map_c33038864093cd6e3347c4de74e327dd);
+        
+    
+            var icon_9aa175910c0c4d16597aa22449877afe = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f9fcf610e2c06c6102b069d6df92e9d2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9dcda9d2aa8fa7800c65bd20e908a82b = $(`<div id="html_9dcda9d2aa8fa7800c65bd20e908a82b" style="width: 100.0%; height: 100.0%;"><b>GOLD-Ilesha-01</b><br>RED GOLD<br>Ilesha Schist Belt - Iron Oxide high<br>7.62,4.73</div>`)[0];
+                popup_f9fcf610e2c06c6102b069d6df92e9d2.setContent(html_9dcda9d2aa8fa7800c65bd20e908a82b);
+            
+        
+
+        marker_30acb53c4542b84c7a6baa44a184b1d9.bindPopup(popup_f9fcf610e2c06c6102b069d6df92e9d2)
+        ;
+
+        
+    
+    
+                marker_30acb53c4542b84c7a6baa44a184b1d9.setIcon(icon_9aa175910c0c4d16597aa22449877afe);
+            
+    
+            var circle_c43c1cd8eae14cdf1a32a4449c7bdad5 = L.circle(
+                [7.62, 4.73],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5000, "stroke": true, "weight": 3}
+            ).addTo(map_c33038864093cd6e3347c4de74e327dd);
+        
+    
+            var marker_efa62b1fa474b66456d789d92fa89575 = L.marker(
+                [12.15, 6.25],
+                {
+}
+            ).addTo(map_c33038864093cd6e3347c4de74e327dd);
+        
+    
+            var icon_9a7f1ad109e29f607ff27c1f72335e52 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_21fcebf2baea595346fb8a569c2cf196 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_799c720b5be0fb2d8a7e29cb2bfae192 = $(`<div id="html_799c720b5be0fb2d8a7e29cb2bfae192" style="width: 100.0%; height: 100.0%;"><b>GOLD-Zamfara-01</b><br>RED GOLD<br>Zamfara - Quartz veins in schist<br>12.15,6.25</div>`)[0];
+                popup_21fcebf2baea595346fb8a569c2cf196.setContent(html_799c720b5be0fb2d8a7e29cb2bfae192);
+            
+        
+
+        marker_efa62b1fa474b66456d789d92fa89575.bindPopup(popup_21fcebf2baea595346fb8a569c2cf196)
+        ;
+
+        
+    
+    
+                marker_efa62b1fa474b66456d789d92fa89575.setIcon(icon_9a7f1ad109e29f607ff27c1f72335e52);
+            
+    
+            var circle_7f04b01e0a1b77f2156e148a1c37ac47 = L.circle(
+                [12.15, 6.25],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5000, "stroke": true, "weight": 3}
+            ).addTo(map_c33038864093cd6e3347c4de74e327dd);
+        
+    
+            var marker_f2c94f05d91e180f5a39ba7d8963f808 = L.marker(
+                [7.85, 6.75],
+                {
+}
+            ).addTo(map_c33038864093cd6e3347c4de74e327dd);
+        
+    
+            var icon_124927d1281284a4a1256fffcba35af5 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_24823f0ab0de420fa9e8437a24d9d401 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f7afe36cbf1bc81fa77877368eeaba95 = $(`<div id="html_f7afe36cbf1bc81fa77877368eeaba95" style="width: 100.0%; height: 100.0%;"><b>GOLD-Ekiti-01</b><br>RED GOLD<br>Ekiti - Alluvial gold zone<br>7.85,6.75</div>`)[0];
+                popup_24823f0ab0de420fa9e8437a24d9d401.setContent(html_f7afe36cbf1bc81fa77877368eeaba95);
+            
+        
+
+        marker_f2c94f05d91e180f5a39ba7d8963f808.bindPopup(popup_24823f0ab0de420fa9e8437a24d9d401)
+        ;
+
+        
+    
+    
+                marker_f2c94f05d91e180f5a39ba7d8963f808.setIcon(icon_124927d1281284a4a1256fffcba35af5);
+            
+    
+            var circle_5f50cc2f8b81c09dfc6d59775381298a = L.circle(
+                [7.85, 6.75],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5000, "stroke": true, "weight": 3}
+            ).addTo(map_c33038864093cd6e3347c4de74e327dd);
+        
+    
+            var marker_513fa97f55123d8d2b8405417f838e29 = L.marker(
+                [9.9, 8.9],
+                {
+}
+            ).addTo(map_c33038864093cd6e3347c4de74e327dd);
+        
+    
+            var icon_037743a762f2af2caaa1962b96619e38 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f7e3d92608b4daf9e38fefa30310c071 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_be633ace04daf511291ebd2826ca3e15 = $(`<div id="html_be633ace04daf511291ebd2826ca3e15" style="width: 100.0%; height: 100.0%;"><b>TIN-Jos-01</b><br>BLUE TIN<br>Jos Plateau - Younger granite<br>9.9,8.9</div>`)[0];
+                popup_f7e3d92608b4daf9e38fefa30310c071.setContent(html_be633ace04daf511291ebd2826ca3e15);
+            
+        
+
+        marker_513fa97f55123d8d2b8405417f838e29.bindPopup(popup_f7e3d92608b4daf9e38fefa30310c071)
+        ;
+
+        
+    
+    
+                marker_513fa97f55123d8d2b8405417f838e29.setIcon(icon_037743a762f2af2caaa1962b96619e38);
+            
+    
+            var circle_8215257324ae8b5e38b032bd4bae13ac = L.circle(
+                [9.9, 8.9],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5000, "stroke": true, "weight": 3}
+            ).addTo(map_c33038864093cd6e3347c4de74e327dd);
+        
+    
+            var marker_1da6bfab03b6d38fb6f9c552eff4b7bd = L.marker(
+                [9.85, 8.85],
+                {
+}
+            ).addTo(map_c33038864093cd6e3347c4de74e327dd);
+        
+    
+            var icon_ded289c55c21e560aba28db1c0eaab49 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_4da582daa2d51b0b29821e1865098dc2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ba220f7e6cce131aa982e01529cd1ffa = $(`<div id="html_ba220f7e6cce131aa982e01529cd1ffa" style="width: 100.0%; height: 100.0%;"><b>TIN-Jos-02</b><br>BLUE TIN<br>Jos - Rayfield district<br>9.85,8.85</div>`)[0];
+                popup_4da582daa2d51b0b29821e1865098dc2.setContent(html_ba220f7e6cce131aa982e01529cd1ffa);
+            
+        
+
+        marker_1da6bfab03b6d38fb6f9c552eff4b7bd.bindPopup(popup_4da582daa2d51b0b29821e1865098dc2)
+        ;
+
+        
+    
+    
+                marker_1da6bfab03b6d38fb6f9c552eff4b7bd.setIcon(icon_ded289c55c21e560aba28db1c0eaab49);
+            
+    
+            var circle_06b24c75881a3c795ac50919a4ccc8fa = L.circle(
+                [9.85, 8.85],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5000, "stroke": true, "weight": 3}
+            ).addTo(map_c33038864093cd6e3347c4de74e327dd);
+        
+    
+            var marker_ded45b7cf93fa96d875d247e63bd75ef = L.marker(
+                [10.2, 9.2],
+                {
+}
+            ).addTo(map_c33038864093cd6e3347c4de74e327dd);
+        
+    
+            var icon_f88f4670b315af38b0cc8792b21490d8 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_12c34c8651a840cad54de4c971dd9d7d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7a022a36ed7aac21e14d0cd1e63e6d2c = $(`<div id="html_7a022a36ed7aac21e14d0cd1e63e6d2c" style="width: 100.0%; height: 100.0%;"><b>TIN-Bauchi-01</b><br>BLUE TIN<br>Bauchi - Tin belt extension<br>10.2,9.2</div>`)[0];
+                popup_12c34c8651a840cad54de4c971dd9d7d.setContent(html_7a022a36ed7aac21e14d0cd1e63e6d2c);
+            
+        
+
+        marker_ded45b7cf93fa96d875d247e63bd75ef.bindPopup(popup_12c34c8651a840cad54de4c971dd9d7d)
+        ;
+
+        
+    
+    
+                marker_ded45b7cf93fa96d875d247e63bd75ef.setIcon(icon_f88f4670b315af38b0cc8792b21490d8);
+            
+    
+            var circle_9b37dd16c53f09e6d3d5286ae84c8fd9 = L.circle(
+                [10.2, 9.2],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5000, "stroke": true, "weight": 3}
+            ).addTo(map_c33038864093cd6e3347c4de74e327dd);
+        
+    
+            var layer_control_706b9ed8016386f4713641574a8dc4f7_layers = {
+                base_layers : {
+                    "openstreetmap" : tile_layer_58363ad5fd099ca8aedba444fb27e11c,
+                    "Esri Satellite" : tile_layer_8cb7c85351ec2a5f0e83d427283950ff,
+                    "Streets" : tile_layer_185b74089de432aa88cf813ad0283062,
+                },
+                overlays :  {
+                },
+            };
+            let layer_control_706b9ed8016386f4713641574a8dc4f7 = L.control.layers(
+                layer_control_706b9ed8016386f4713641574a8dc4f7_layers.base_layers,
+                layer_control_706b9ed8016386f4713641574a8dc4f7_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": true,
+  "autoZIndex": true,
+}
+            ).addTo(map_c33038864093cd6e3347c4de74e327dd);
+
+        
+</script>
+</html>
