@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_7245ee827a8a22f6add69878657e7396 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+<script>
+map.on('click', function(e){
+  var lat = e.latlng.lat.toFixed(5);
+  var lng = e.latlng.lng.toFixed(5);
+  L.popup()
+   .setLatLng(e.latlng)
+   .setContent("<b>YOU CLICKED:</b><br>Lat: "+lat+"<br>Lon: "+lng+"<br><button onclick='navigator.clipboard.writeText(""+lat+", "+lng+"")'>COPY COORD</button>")
+   .openOn(map);
+});
+</script>
+    
+            <div class="folium-map" id="map_7245ee827a8a22f6add69878657e7396" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_7245ee827a8a22f6add69878657e7396 = L.map(
+                "map_7245ee827a8a22f6add69878657e7396",
+                {
+                    center: [8.5, 8.1],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 9,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_e19114d0a3f4fa21db67202b1b375aa8 = L.tileLayer(
+                "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+                {
+  "minZoom": 0,
+  "maxZoom": 18,
+  "maxNativeZoom": 18,
+  "noWrap": false,
+  "attribution": "Tiles \u0026copy; Esri \u0026mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_e19114d0a3f4fa21db67202b1b375aa8.addTo(map_7245ee827a8a22f6add69878657e7396);
+        
+    
+            var marker_f7f3c50e1102392e7aa6a31fe5fddef9 = L.marker(
+                [8.84, 7.93],
+                {
+}
+            ).addTo(map_7245ee827a8a22f6add69878657e7396);
+        
+    
+            var icon_4887f8e3e3936f41e1ec7663b7712788 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f365584104eb6f0d37dcaa59af589d47 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_73f7bbdb904aa1cb0896738eb155127f = $(`<div id="html_73f7bbdb904aa1cb0896738eb155127f" style="width: 100.0%; height: 100.0%;"><b>Kokona Lithium</b><br>Lat: 8.84<br>Lon: 7.93<br><i>Copy this!</i></div>`)[0];
+                popup_f365584104eb6f0d37dcaa59af589d47.setContent(html_73f7bbdb904aa1cb0896738eb155127f);
+            
+        
+
+        marker_f7f3c50e1102392e7aa6a31fe5fddef9.bindPopup(popup_f365584104eb6f0d37dcaa59af589d47)
+        ;
+
+        
+    
+    
+                marker_f7f3c50e1102392e7aa6a31fe5fddef9.setIcon(icon_4887f8e3e3936f41e1ec7663b7712788);
+            
+    
+            var marker_2865ca11de36ace25e7121efc05d3d13 = L.marker(
+                [8.84, 7.87],
+                {
+}
+            ).addTo(map_7245ee827a8a22f6add69878657e7396);
+        
+    
+            var icon_fd4d4c9e6a1049a2ec23530492fafa8a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_7f8c2ed664fbf139769568fd57d3d5c8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e90a83a5c06003d20ea4ce4279e8fbb5 = $(`<div id="html_e90a83a5c06003d20ea4ce4279e8fbb5" style="width: 100.0%; height: 100.0%;"><b>Keffi Lithium</b><br>Lat: 8.84<br>Lon: 7.87<br><i>Copy this!</i></div>`)[0];
+                popup_7f8c2ed664fbf139769568fd57d3d5c8.setContent(html_e90a83a5c06003d20ea4ce4279e8fbb5);
+            
+        
+
+        marker_2865ca11de36ace25e7121efc05d3d13.bindPopup(popup_7f8c2ed664fbf139769568fd57d3d5c8)
+        ;
+
+        
+    
+    
+                marker_2865ca11de36ace25e7121efc05d3d13.setIcon(icon_fd4d4c9e6a1049a2ec23530492fafa8a);
+            
+    
+            var marker_a6ce74e33c56694b0d740d6d1e7fc9aa = L.marker(
+                [8.91, 8.4],
+                {
+}
+            ).addTo(map_7245ee827a8a22f6add69878657e7396);
+        
+    
+            var icon_3b2c9704158e56979a22fd51d80a6b90 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_86524dc84385bdb0e9b569789f8cf428 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5db711e3cf041d80f09158282612ea1e = $(`<div id="html_5db711e3cf041d80f09158282612ea1e" style="width: 100.0%; height: 100.0%;"><b>Akwanga Lithium</b><br>Lat: 8.91<br>Lon: 8.4<br><i>Copy this!</i></div>`)[0];
+                popup_86524dc84385bdb0e9b569789f8cf428.setContent(html_5db711e3cf041d80f09158282612ea1e);
+            
+        
+
+        marker_a6ce74e33c56694b0d740d6d1e7fc9aa.bindPopup(popup_86524dc84385bdb0e9b569789f8cf428)
+        ;
+
+        
+    
+    
+                marker_a6ce74e33c56694b0d740d6d1e7fc9aa.setIcon(icon_3b2c9704158e56979a22fd51d80a6b90);
+            
+    
+            var marker_bffcd358e142ae7048d172c943be3f8f = L.marker(
+                [8.93, 8.6],
+                {
+}
+            ).addTo(map_7245ee827a8a22f6add69878657e7396);
+        
+    
+            var icon_7e9006840b97d5ed80ea5a31af1e257e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_5508449733c2e1208555f07a377cc223 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7bda309554760549e07c246bd42d71f5 = $(`<div id="html_7bda309554760549e07c246bd42d71f5" style="width: 100.0%; height: 100.0%;"><b>Wamba Lithium</b><br>Lat: 8.93<br>Lon: 8.6<br><i>Copy this!</i></div>`)[0];
+                popup_5508449733c2e1208555f07a377cc223.setContent(html_7bda309554760549e07c246bd42d71f5);
+            
+        
+
+        marker_bffcd358e142ae7048d172c943be3f8f.bindPopup(popup_5508449733c2e1208555f07a377cc223)
+        ;
+
+        
+    
+    
+                marker_bffcd358e142ae7048d172c943be3f8f.setIcon(icon_7e9006840b97d5ed80ea5a31af1e257e);
+            
+    
+                var lat_lng_popup_f08b8880c6f6f2c45dc0e85dd0ac9d10 = L.popup();
+                function latLngPop(e) {
+                    lat_lng_popup_f08b8880c6f6f2c45dc0e85dd0ac9d10
+                        .setLatLng(e.latlng)
+                        .setContent("Latitude: " + e.latlng.lat.toFixed(4) +
+                                    "<br>Longitude: " + e.latlng.lng.toFixed(4))
+                        .openOn(map_7245ee827a8a22f6add69878657e7396);
+                    }
+                map_7245ee827a8a22f6add69878657e7396.on('click', latLngPop);
+            
+</script>
+</html>

@@ -1,0 +1,12 @@
+{
+  "project": "Niger Delta Geology - Asaba/Warri",
+  "geologist": "Benedict",
+  "location": "Asaba, Delta State, Nigeria",
+  "coordinates": "6.2N, 6.7E",
+  "basin": "Niger Delta Sedimentary Basin",
+  "formations": ["Benin Formation", "Agbada Formation", "Akata Formation"],
+  "rock_types": ["Sandstone", "Shale", "Claystone", "Alluvial Sands"],
+  "resources": ["Sharp Sand", "Gravel", "Clay", "Lignite", "Limestone", "Kaolin"],
+  "s3_bucket": "benedict-geology-minerals-db-8554",
+  "verified_date": "2026-10-15"
+}

@@ -1,0 +1,14 @@
+DAY 26 AWS OPEN DATA PULL
+Location: Nasarawa 32/N/MK
+Bucket: s3://sentinel-s2-l2a
+                           PRE 10/
+                           PRE 15/
+                           PRE 20/
+                           PRE 25/
+                           PRE 30/
+                           PRE 5/
+
+
+Nasarawa Lithium AOI: 8.5N, 8.5E
+Sentinel-2 bands needed: B04 (Red), B08 (NIR), B11 (SWIR) for lithium prospectivity
+Next: Use this tile ID in GEE for NDVI + Clay mineral ratio
