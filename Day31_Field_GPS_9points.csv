@@ -1,4 +1,10 @@
-system:index,class,.geo
-1_0,1,"{""type"":""Point"",""coordinates"":[7.999999999999998,8.5]}"
-1_1,1,"{""type"":""Point"",""coordinates"":[8.1,8.5]}"
-2_0,0,"{""type"":""Point"",""coordinates"":[7.8,8.2]}"
+system:index,class,id,.geo
+1_0,1,L1,"{""type"":""Point"",""coordinates"":[8.45,8.92]}"
+1_1,1,L2,"{""type"":""Point"",""coordinates"":[8.5,8.88]}"
+1_2,1,L3,"{""type"":""Point"",""coordinates"":[8.48,8.850000000000001]}"
+1_3,1,L4,"{""type"":""Point"",""coordinates"":[8.52,8.9]}"
+1_4,1,L5,"{""type"":""Point"",""coordinates"":[8.460000000000003,8.820000000000002]}"
+1_5,1,L6,"{""type"":""Point"",""coordinates"":[8.44,8.87]}"
+2_0,0,N1,"{""type"":""Point"",""coordinates"":[8.299999999999999,8.700000000000001]}"
+2_1,0,N2,"{""type"":""Point"",""coordinates"":[8.6,8.950000000000001]}"
+2_2,0,N3,"{""type"":""Point"",""coordinates"":[8.35,8.8]}"
