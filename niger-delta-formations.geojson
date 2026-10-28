@@ -1,0 +1,48 @@
+{
+  "type": "FeatureCollection",
+  "name": "niger-delta-formations",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "formation": "Pegmatite Zone - Lithium Target",
+        "age": "Pan-African ~600Ma",
+        "lithology": "Spodumene-bearing pegmatite",
+        "potential": "High Lithium",
+        "color": "#FF6B35"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[8.28, 8.92], [8.35, 8.93], [8.38, 8.88], [8.34, 8.84], [8.27, 8.86], [8.28, 8.92]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "formation": "Granite Basement",
+        "age": "Pan-African",
+        "lithology": "Biotite granite",
+        "potential": "Host rock",
+        "color": "#8B8B8B"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[8.20, 8.80], [8.45, 8.80], [8.45, 8.75], [8.20, 8.75], [8.20, 8.80]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "formation": "Laterite Overburden",
+        "age": "Recent",
+        "lithology": "Laterite, clay",
+        "potential": "Overburden",
+        "color": "#D2B48C"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[8.28, 9.00], [8.40, 9.00], [8.40, 8.93], [8.28, 8.92], [8.28, 9.00]]]
+      }
+    }
+  ]
+}
