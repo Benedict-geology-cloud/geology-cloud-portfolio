@@ -1,0 +1,23 @@
+// Your existing points loading
+fetch('nasarawa_lithium_qfield.geojson')// Day 36 - Real Geology Formations Polygons
+fetch('niger-delta-formations.geojson')
+  .then(r => r.json())
+  .then(data => {
+    L.geoJSON(data, {
+      style: function(feature) {
+        return {
+          color: 'black',
+          weight: 1,
+          fillColor: feature.properties.color,
+          fillOpacity: 0.6
+        };
+      },
+      onEachFeature: function(feat, layer) {
+        layer.bindPopup(
+          "<b>" + feat.properties.formation + "</b><br>" +
+          "Lithology: " + feat.properties.lithology + "<br>" +
+          "Potential: " + feat.properties.potential
+        );
+      }
+    }).addTo(map);
+  });
