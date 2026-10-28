@@ -1,0 +1,141 @@
+{
+  "type": "FeatureCollection",
+  "name": "Nasarawa Lithium QField Day32",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "L1",
+        "class": "Lithium",
+        "note": "Pegmatite target - high clay + near river"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.45,
+          8.92
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "L2",
+        "class": "Lithium",
+        "note": "Pegmatite target"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.5,
+          8.88
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "L3",
+        "class": "Lithium",
+        "note": "Pegmatite target"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.48,
+          8.91
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "L4",
+        "class": "Lithium",
+        "note": "Pegmatite target"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.52,
+          8.9
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "L5",
+        "class": "Lithium",
+        "note": "Pegmatite - southern"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.46,
+          8.82
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "L6",
+        "class": "Lithium",
+        "note": "Pegmatite target"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.44,
+          8.87
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "N1",
+        "class": "Non-Lithium",
+        "note": "Background granite"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.3,
+          8.7
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "N2",
+        "class": "Non-Lithium",
+        "note": "Background north"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.6,
+          8.95
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "N3",
+        "class": "Non-Lithium",
+        "note": "Background near road"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.39,
+          8.8
+        ]
+      }
+    }
+  ]
+}
