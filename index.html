@@ -1,21 +1,61 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Asaba Cloud Geologist Lab | Benedict | Lithium Exploration</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>body{font-family:Arial;max-width:900px;margin:auto;padding:20px} .card{border:1px solid #ccc;padding:15px;margin:15px 0;border-radius:10px} .high{background:#ffe6e6} .ai{background:#e6f0ff} a{color:#0066cc;text-decoration:none;font-weight:bold}</style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Benedict | Cloud Geologist</title>
+<style>
+ body{font-family:Segoe UI,Arial;margin:0;background:#f8f9fa;color:#212529;line-height:1.6}
+ header{background:#0a192f;color:white;padding:60px 20px;text-align:center}
+ header p{color:#64ffda;font-size:1.2em}
+ nav{background:#112240;padding:12px;text-align:center;position:sticky;top:0}
+ nav a{color:#ccd6f6;margin:0 15px;text-decoration:none;font-weight:bold}
+ section{max-width:1000px;margin:40px auto;padding:30px;background:white;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,0.08)}
+ h2{color:#0a192f;border-left:5px solid #64ffda;padding-left:12px}
+ .grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+ .card{border:1px solid #e9ecef;border-radius:10px;padding:15px;background:#fdfdfd}
+ .badge{background:#ff6b35;color:white;padding:4px 10px;border-radius:20px;font-size:0.8em}
+ .badge.example{background:#ffd60a;color:#000;border:1px solid red}
+ img{max-width:100%;border-radius:10px;border:1px solid #ddd}
+ @media(max-width:700px){.grid{grid-template-columns:1fr}}
+</style>
 </head>
 <body>
-<h1>Asaba Cloud Geologist Lab - Nasarawa Lithium Belt</h1>
-<p>100% Termux Android | 45-Day Challenge | Benedict</p>
+<header><h1>From Asaba to Mineral Hunter</h1><p>Cloud Geologist | AWS | Python | Remote Sensing | Leaflet</p></header>
+<nav><a href="#home">Home</a><a href="#geology">Geology</a><a href="#minerals">Mineral Map</a><a href="#reports">Reports</a><a href="#about">About</a></nav>
 
-<div class="card"><h3>Day 24: First Lithium Map</h3><a href="Nasarawa_Lithium_Day24.html">View Map</a></div>
-<div class="card"><h3>Day 25: 10 Mineral Targets</h3><a href="Day25_Full_Mineral_Map.html">View Full Map</a></div>
-<div class="card"><h3>Day 27: Investor Report (90% Manual)</h3><a href="Day27_Mineral_Report.html">View Report</a></div>
-<div class="card high"><h3>Day 28: RANDOM FOREST AI MAP 🔴🔵 LIVE</h3><p>Model: smileRandomForest 50 trees | Inputs: B4,B8,B11,B12 + CLAY(B11/B12) + NDVI + IRON</p><a href="Day28_ML_Heatmap.html">View AI Heatmap</a></div>
-<div class="card ai"><h3>Day 29: 100% Accuracy + GeoTIFF Export ✅</h3><p>Training Accuracy: 100% | Confusion [[3,0],[0,6]] | Export: Nasarawa_Lithium_RF.tif to Drive</p><a href="Day29_Accuracy_Report.txt">View Accuracy Report</a></div>
+<section id="home"><h2>Home - My Journey</h2>
+<p>Phase 1 Day 1-14 Foundation: Termux, S3 benedict-geology-minerals-db-8554, Python geology_analyzer.py, GitHub LIVE</p>
+<p>Phase 2 Day 15-20 Real Website: HTML, CSS, JS, Leaflet 6 cities Asaba Warri Benin Sapele Ughelli Agbor</p>
+<p>Phase 3 Day 21-32 Cloud Mineral Hunting: GEE, Sentinel-2, Lithium Belt Nasarawa Kogi Ekiti, Gold Zamfara Ilesha Niger, Tin Jos Plateau</p>
+<p>Phase 4 Day 33-45 Pro Portfolio: S3 CDN, Git branches, Python Viz Day 35 borehole, Day 36 GeoJSON real polygons, Day 37-38 V3 FINAL ONE SITE</p>
+</section>
 
-<p><b>Live from Asaba to Cloud.</b> Built with earthengine-api, Sentinel-2, AWS S3 Tile 32/N/MK.</p>
-<p>GitHub: Benedict-geology-cloud | GEE Project: geology-mineral-hunt</p>
+<section id="geology"><h2>Geology - Borehole & Formations</h2>
+<div class="grid">
+<div class="card"><h3>Day 35 Borehole Log</h3><p><span class="badge example">EXAMPLE MODEL - NOT ACTUAL DRILLING</span></p><img src="Day35_Borehole_Log.png"><p>Benin/Agbada/Akata thickness chart with Python Matplotlib</p></div>
+<div class="card"><h3>Day 36 Real Geology Polygons</h3><p><span class="badge">REAL from field points</span></p><img src="Day36_Formations_Map.png"><p>niger-delta-formations.geojson - Pegmatite Lithium Target orange zone</p></div>
+</div></section>
+
+<section id="minerals"><h2>Mineral Map - Nasarawa Lithium</h2>
+<p>Full portal: <a href="nigeria-minerals.html">nigeria-minerals.html</a> with Red=Gold Yellow=Lithium Blue=Tin</p>
+<div class="grid">
+<div class="card"><h3>Day 37 Field Photos</h3><p><span class="badge example">PLACEHOLDER - Replace when in Akwanga</span></p><img src="photos/L1_Akwanga.jpg"><p>QField -> photos/ -> Leaflet popup. Honest placeholder.</p></div>
+<div class="card"><h3>Day 38-39 Assay & Reserve</h3><p><span class="badge example">SYNTHETIC EXAMPLE - NOT LAB / NOT JORC</span></p><img src="Day38_Assay_Chart.png"><img src="Day39_Reserve_Estimate.png" style="margin-top:10px"><p>1.34% avg Li2O, Inferred 312.38 Mt</p></div>
+</div></section>
+
+<section id="reports"><h2>Python Reports</h2>
+<ul>
+<li>geology_analyzer.py - Benin/Agbada/Akata analysis</li>
+<li>nasarawa_lithium_qfield.geojson - 9 field points</li>
+<li>niger-delta-formations.geojson - 3 real polygons</li>
+<li>Nasarawa_Lithium_Assay_Day38.csv - Example assay</li>
+<li>Day39_Reserve_Calculation.csv - Example resource</li>
+</ul>
+</section>
+
+<section id="about"><h2>About Asaba</h2><p>From Asaba Delta State. Using AWS Open Data + Python + Leaflet to find Lithium/Gold/Tin from phone. This portfolio proves website + cloud + mineral hunting FULL PACKAGE.</p></section>
+
+<footer style="background:#0a192f;color:#8892b0;text-align:center;padding:30px"><p>45-Day Asaba Cloud Geologist Master Roadmap | Day 37-38 V3 FINAL | Honest Examples Labeled</p></footer>
 </body>
 </html>
