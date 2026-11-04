@@ -1,0 +1,21 @@
+BENEDICT MEFOR - Cloud Geologist | meforkanayo@gmail.com | 5 Flight Aluminium Estate Rd Bonsaac Asaba Delta
+Portfolio: https://benedict-geology-cloud.github.io/geology-cloud-portfolio/ | S3: benedict-geology-minerals-db-8554
+
+SUMMARY: Cloud Geologist 45 days Android+Termux, Benin/Agbada/Akata + Lithium Nasarawa 1.34% Li2O
+
+SKILLS: AWS S3 CloudFront Python rasterio geopandas folium matplotlib QGIS QField Sentinel-2 Leaflet GeoJSON Git
+
+PROJECTS:
+- Nigeria Mineral Portal: nigeria-minerals.html Live Red Gold Yellow Lithium Blue Tin
+- Nasarawa Lithium: 9 QField points niger-delta-formations.geojson assay viz
+- Python: geology_analyzer.py borehole logs thickness charts
+
+EXPERIENCE: Cloud Geology Portfolio 2025-2026 Independent Asaba/Remote Built 7 maps hosted S3
+
+MEMBERSHIP:
+-Council of Nigeria Mining Engineers and Geoscientist(COMEG)
+-Nigeria Institute of Safety Professionals: GHSE and Level 3 certificate
+-Nigeria Mining and Geosciences Society (NMGS)
+-Cisco Certified Networking Associate (CCNA)
+-National Centre for Remote Sensing. Jos Consultancy Service (Practical Training Course in ArcGIS)
+-Central University of Karnataka, India(Certificate of Completion QGIS)
