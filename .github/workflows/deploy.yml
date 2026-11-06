@@ -1,0 +1,22 @@
+name: Deploy on EC2 Self-Hosted
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: self-hosted
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Docker Build Test
+        run: |
+          docker build -t benedict-map .
+          docker images
+
+      - name: Deploy to S3
+        run: |
+          aws s3 sync . s3://benedict-geology-minerals-db-8554 --delete --exclude ".git/*" --exclude ".github/*"
+          echo "Deployed from EC2!"
